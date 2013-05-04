@@ -33,13 +33,16 @@ like:
 
     <p class="to_append" name="greeting" localize-data="localize[maintext.hello]">Hello</p>
 
-will have his text changed to "Bonjour" if the browser language is discovered to 
+will have it's text changed to "Bonjour" if the browser language is discovered to 
 
     "fr"
 
 ## In use with Intel XDK & appMobi
 jqMobi is using asynchronous Ajax method to load any file. Thus loading the json file before 
 AppMobi.device is being instantiated, will result in an empty result value and no localization will be possible.
+
+
+
 
 <hr>
 
