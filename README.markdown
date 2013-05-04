@@ -9,9 +9,11 @@ localize-data="localize[json.value]"
 
 ## Example:
 given a json file named: 
+
     main_language-fr.json
     
-in your base directory 
+in your base directory named 
+
     localize/
 
 with following content:
@@ -22,7 +24,11 @@ with following content:
     }
     
 add following line between script tag to your html header:
-    
+
+    /*
+     * Search in directory "localize"
+     * the file starting with "main_language"
+     * if the browser language is english, skip
     $("[localize-data*=localize]").localize("localize/main_language", {skipLanguage: /^en/, loadBase: false});
 
 any tag containing: 
@@ -39,7 +45,21 @@ will have it's text changed to "Bonjour" if the browser language is discovered t
 
 ## In use with Intel XDK & appMobi
 jqMobi is using asynchronous Ajax method to load any file. Thus loading the json file before 
-AppMobi.device is being instantiated, will result in an empty result value and no localization will be possible.
+AppMobi.device is being instantiated, will result in an empty value and no localization will be possible.
+
+Possible solution
+
+    /* This code is used for appMobi native apps */
+    var onDeviceReady = function() {
+        AppMobi.device.setRotateOrientation("portrait");
+        AppMobi.device.setAutoRotate(false);
+        webRoot = AppMobi.webRoot + "/";
+        
+        // Now the device should be ready
+        $("[localize-data*=localize]").localize("localize/main_language", {skipLanguage: /^en/, loadBase: false});
+        
+    };
+    document.addEventListener("appMobi.device.ready", onDeviceReady, false);
 
 
 
