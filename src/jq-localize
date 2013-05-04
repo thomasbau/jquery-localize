@@ -1,9 +1,10 @@
 # Copyright (c) MobComp GmbH (http://www.mobcomp.ch), 2013.
 # Dual licensed under the GPL (http://dev.jquery.com/browser/trunk/jquery/GPL-LICENSE.txt) and MIT (http://dev.jquery.com/browser/trunk/jquery/MIT-LICENSE.txt) licenses.
 # Written by Thomas Baumann (tbaumann@mobcomp.ch) for use on mc-time web app.
-# http://github.com/coderifous/jquery-localize
+# http://github.com/thomasbau/jquery-localize/src/jq-localize
 # Based off of Keith Wood's Localisation jQuery plugin.
 # http://keith-wood.name/localisation.html
+# and Jim Garvin (http://github.com/coderifous)
 
 
 (function() {
