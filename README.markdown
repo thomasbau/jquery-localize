@@ -22,15 +22,20 @@ with following content:
     }
     
 add following line between script tag to your html header:
+    
     $("[localize-data*=localize]").localize("localize/main_language", {skipLanguage: /^en/, loadBase: false});
 
 any tag containing: 
+
     localize-data="localize[maintext.hello]"
 
 like:
+
     <p class="to_append" name="greeting" localize-data="localize[maintext.hello]">Hello</p>
 
-will have his text changed to "Bonjour" if the browser language is discovered to "fr"
+will have his text changed to "Bonjour" if the browser language is discovered to 
+
+    "fr"
 
 ## In use with Intel XDK & appMobi
 jqMobi is using asynchronous Ajax method to load any file. Thus loading the json file before 
